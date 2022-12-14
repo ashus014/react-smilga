@@ -24,7 +24,14 @@ const Booklist = () => {
         img={firstBook.img}
         author={firstBook.author}
         title={firstBook.title}
-      />
+      >
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </p>
+      </Book>
       <Book
         img={secondBook.img}
         author={secondBook.author}
@@ -35,12 +42,13 @@ const Booklist = () => {
 };
 
 const Book = (props) => {
-  const { img, title, author } = props;
+  const { img, title, author, children } = props;
   return (
     <article className="book">
       <img src={img} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      {children}
     </article>
   );
 };
